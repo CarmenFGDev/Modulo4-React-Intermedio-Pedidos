@@ -1,0 +1,43 @@
+.layout-center {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #808000;
+  box-shadow: 1px 1px 3px 0px rgba(128, 128, 0.1) inset;
+}
+.layout-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3em;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1) inset;
+  margin: 2em;
+}
+.container-inline {
+  display: inline-flex;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: olive !important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: olive !important;
+}
+.css-1rtoo2j-MuiButtonGroup-root .MuiButtonGroup-grouped {
+  border-color: olive;
+  color: olive;
+}
+.data-grid {
+  width: 100%;
+  height: 300px;
+  margin-top: 1em;
+}
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: olive !important;
+}
