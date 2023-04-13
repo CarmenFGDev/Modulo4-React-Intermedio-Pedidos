@@ -1,4 +1,5 @@
 import { GridColDef } from "@mui/x-data-grid/models/colDef";
+import { STATUS } from "./info.model";
 export interface RowDetails {
   id: string;
   state: string;
@@ -6,27 +7,27 @@ export interface RowDetails {
   totalAmount: number;
 }
 export const columnsDetails: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "state", headerName: "State" },
-  { field: "description", headerName: "Description" },
-  { field: "totalAmount", headerName: "Total Amount", editable: true },
+  { field: "id", headerName: "ID", width: 100},
+  { field: "state", headerName: "Estado", width: 200 },
+  { field: "description", headerName: "Descripción", width: 300 },
+  { field: "totalAmount", headerName: "Total", editable: true , width: 100},
 ];
 export const rowsDetails: RowDetails[] = [
   {
     id: "1",
-    state: "Valido",
+    state: STATUS.VALID,
     description: "Reactivos maquinaria",
     totalAmount: 10.5,
   },
   {
     id: "2",
-    state: "Pendiente",
+    state: STATUS.PENDING,
     description: "Recambios impresión",
     totalAmount: 11.2,
   },
   {
     id: "3",
-    state: "Pendiente",
+    state: STATUS.PENDING,
     description: "Soportes plataforma",
     totalAmount: 540,
   },

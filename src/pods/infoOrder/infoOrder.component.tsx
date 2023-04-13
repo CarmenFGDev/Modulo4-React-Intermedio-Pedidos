@@ -18,8 +18,7 @@ export const InfoOrderComponent: React.FC = () => {
       autoComplete="off"
     >
       <Typography variant="h5" component="h5" color="olive" mb={3}>
-        {" "}
-        Pedido a proveedor{" "}
+        Pedido a proveedor
       </Typography>
       <div>
         <TextField

@@ -3,3 +3,7 @@ export interface Info {
   supplier: string;
   orderDate: any;
 }
+export enum STATUS {
+  VALID= 'Válido',
+  PENDING= 'Pendiente'
+}

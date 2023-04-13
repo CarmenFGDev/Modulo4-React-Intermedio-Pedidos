@@ -2,11 +2,11 @@ import React from "react";
 import { RowDetails, rowsDetails } from "../../common/model/detail.model";
 import { GridRowSelectionModel } from "@mui/x-data-grid/models/gridRowSelectionModel";
 
-interface StateGrid {
+export interface StateGrid {
   rowsGrid: RowDetails[];
   rowsSelection: GridRowSelectionModel;
 }
-interface StateGridContext {
+export interface StateGridContext {
   stateGrid: StateGrid;
   setStateGrid: (value: StateGrid) => void;
 }
