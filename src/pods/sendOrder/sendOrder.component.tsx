@@ -9,26 +9,19 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
-import { STATUS } from "../../common/model/info.model";
+import * as classes from "./../../details.styles";
+import { useManageInfo } from "./useManageInfo";
+
+
+
+
 
 export const SendOrderComponent: React.FC = () => {
   const context = React.useContext(MyContextStateGrid);
   const rowsGrid = context.stateGrid.rowsGrid;
-  const rowSelection = context.stateGrid.rowsSelection;
+  const { disabledSend, totalAmount, totalAmountValidate} = useManageInfo(rowsGrid);
 
-  const disabledSend: boolean = rowsGrid.some((row) => row.state === STATUS.PENDING);
-  const totalAmount = rowsGrid.reduce(
-    (accumulator, currentValue) => isNaN(Number(currentValue.totalAmount)) ? accumulator : accumulator + Number(currentValue.totalAmount),
-    0
-  );
-  const totalAmountValidate = rowsGrid.reduce(
-     (accumulator, currentValue) =>
-      currentValue.state === STATUS.VALID && !isNaN(Number(currentValue.totalAmount))
-        ? accumulator + Number(currentValue.totalAmount)
-        : accumulator,
-    0
-  );
-
+ 
   // Dialog
   const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -68,7 +61,7 @@ export const SendOrderComponent: React.FC = () => {
         />
         <TextField
           id="progress"
-          label="Progreso"
+          label="Progreso (%)"
           InputProps={{
             readOnly: true,
           }}
@@ -80,7 +73,7 @@ export const SendOrderComponent: React.FC = () => {
           disabled= {disabledSend}
           color="success"
           endIcon={<SendIcon />}
-          sx={{ color: "olive", borderColor: "olive", margin: "1em" }}
+          css={classes.buttonSend}
           onClick={handleClickOpen}
         >
           Enviar
@@ -106,3 +99,5 @@ export const SendOrderComponent: React.FC = () => {
     </Box>
   );
 };
+
+

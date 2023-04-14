@@ -7,11 +7,12 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

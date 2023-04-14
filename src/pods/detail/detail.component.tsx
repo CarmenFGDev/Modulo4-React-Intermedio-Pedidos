@@ -5,9 +5,9 @@ import { DataGrid, GridRowSelectionModel } from "@mui/x-data-grid";
 import { columnsDetails } from "../../common/model/detail.model";
 import { MyContextStateGrid, StateGridContext } from "../../core/providers/stateGridProvider";
 import { STATUS } from "../../common/model/info.model";
+import * as classes from "./../../details.styles";
 
 export const DetailComponent: React.FC = () => {
- 
   const context: StateGridContext = React.useContext(MyContextStateGrid);
   const rowsGrid = context.stateGrid.rowsGrid;
  
@@ -34,8 +34,8 @@ export const DetailComponent: React.FC = () => {
   }
 
   const buttons = [
-    <Button key="validate" onClick={handleOnValid}>Validar</Button>,
-    <Button key="Invalidar" onClick={handleOnInValid}>Invalidar</Button>,
+    <Button key="validate" onClick={handleOnValid}  css={classes.buttonGrid}>Validar</Button>,
+    <Button key="Invalidar" onClick={handleOnInValid}  css={classes.buttonGrid}>Invalidar</Button>,
   ];
 
   const processRowUpdate = (newRow: any) => {
@@ -56,19 +56,11 @@ export const DetailComponent: React.FC = () => {
   return (
     <>
       <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "left",
-          "& > *": {
-            m: 1,
-          },
-        }}
+       css={classes.boxButtoms}
       >
         <ButtonGroup
           color="success"
           aria-label="medium success button group"
-          sx={{ color: "olive", borderColor: "olive" }} 
         >
           {buttons}
         </ButtonGroup>

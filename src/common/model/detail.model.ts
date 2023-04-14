@@ -9,8 +9,8 @@ export interface RowDetails {
 export const columnsDetails: GridColDef[] = [
   { field: "id", headerName: "ID", width: 100},
   { field: "state", headerName: "Estado", width: 200 },
-  { field: "description", headerName: "Descripción", width: 300 },
-  { field: "totalAmount", headerName: "Total", editable: true , width: 100},
+  { field: "description", headerName: "Descripción", width: 260 },
+  { field: "totalAmount", headerName: "Total", editable: true , width: 50},
 ];
 export const rowsDetails: RowDetails[] = [
   {
