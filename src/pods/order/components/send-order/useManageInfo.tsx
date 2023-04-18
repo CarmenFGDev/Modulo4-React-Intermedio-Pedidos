@@ -1,5 +1,5 @@
-import { RowDetails } from "../../common/model/detail.model";
-import { STATUS } from "../../common/model/info.model";
+import { RowDetails } from "../../../../common/model/detail.model";
+import { STATUS } from "../../../../common/model/info.model";
 
 export interface UseManageInfo {
     disabledSend: boolean;

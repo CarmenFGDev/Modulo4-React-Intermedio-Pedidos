@@ -5,7 +5,7 @@ import { DataGrid, GridRowSelectionModel } from "@mui/x-data-grid";
 import { columnsDetails } from "../../common/model/detail.model";
 import { MyContextStateGrid, StateGridContext } from "../../core/providers/stateGridProvider";
 import { STATUS } from "../../common/model/info.model";
-import * as classes from "./../../details.styles";
+import * as classes from "./detail.styles";
 
 export const DetailComponent: React.FC = () => {
   const context: StateGridContext = React.useContext(MyContextStateGrid);
@@ -67,6 +67,7 @@ export const DetailComponent: React.FC = () => {
       </Box>
       <div className="data-grid">
         <DataGrid
+          css={classes.customDataGrid}
           rows={rowsGrid}
           columns={columnsDetails}
           hideFooterPagination={true}

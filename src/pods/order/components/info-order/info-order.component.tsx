@@ -2,18 +2,23 @@ import React from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+//import { AdapterDayjs, LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { Box, TextField, Typography } from "@mui/material";
-import { MyContextInfo } from "../../core/providers/infoProvider";
-import * as classes from "./../../details.styles";
+import * as classes from "./info-order.styles";
+import dayjs from "dayjs";
+import { Info } from "../../../../common/model/info.model";
+
+const initialState = {
+  orderId: "123456",
+  supplier: " Amazon",
+  orderDate: dayjs(new Date()),
+};
 export const InfoOrderComponent: React.FC = () => {
-  const infocontext = React.useContext(MyContextInfo);
-  const { orderId, supplier, orderDate } = infocontext.info;
+  const [info, setInfo] = React.useState<Info>(initialState);
+  const { orderId, supplier, orderDate } = info;
   return (
     <Box
       component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
-      }}
       noValidate
       autoComplete="off"
     >
@@ -28,7 +33,7 @@ export const InfoOrderComponent: React.FC = () => {
           InputProps={{
             readOnly: true,
           }}
-        />
+          css= {classes.inputsInfo} />
         <TextField
           id="supplier"
           label="Proveedor"
@@ -36,9 +41,10 @@ export const InfoOrderComponent: React.FC = () => {
           InputProps={{
             readOnly: true,
           }}
+          css= {classes.inputsInfo}
         />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker defaultValue={orderDate} />
+          <DatePicker defaultValue={orderDate} css= {classes.inputsInfo}/>
         </LocalizationProvider>
       </div>
     </Box>
